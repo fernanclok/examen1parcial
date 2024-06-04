@@ -1,0 +1,13 @@
+{% extends "base/base.html" %}
+
+{% block title %}CREAR TASK{% endblock title %}
+
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+            {{ form }}
+            <button style="margin: 2%;" type="submit" class="btn btn-outline-success form-control">Nueva Tarea</button>
+            <br>
+            <a href="{% url 'core:list_task' %}" class="btn btn-outline-warning form-control">Cancel</a>
+    </form>
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends "base/base.html" %}
+
+{% block title %}LIST GRANT GOAL VIEW{% endblock title %}
+
+{% block content %}
+    <a href="{% url 'core:create_task' %}" class="btn btn-outline-success form-control">Nueva Tarea</a>
+    <table class="table table-striped">
+        <thead>
+            <th>Titulo</th>
+            <th>Description</th>
+            <th>Usuario</th>
+            <th>Fecha</th>
+            <th></th>
+            <th>ACTIONS</th>
+            <th></th>
+        </thead>
+        <tbody>
+            {% for task in grantgoals %}
+                <tr>
+                    <td>{{ task.title }}</td>
+                    <td>{{ task.description }}</td>
+                    <td>{{ task.user }}</td>
+                    <td>{{ task.due }}</td>
+                    <td><a href="{% url 'core:detail_gg' gg.pk %}" class="btn btn-outline-info">Detalles</a></td>
+                    <td><a href="{% url 'core:update_gg' gg.pk %}" class="btn btn-outline-warning">Actualizar</a></td>
+                    <td><a href="{% url 'core:delete_gg' gg.pk %}" class="btn btn-outline-danger">Eliminar</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}

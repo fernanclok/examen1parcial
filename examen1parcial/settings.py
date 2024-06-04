@@ -40,6 +40,7 @@ BASE_APPS = [
 ]
 
 LOCAL_APPS = [
+    'core',
     'home',
 ]
 
@@ -48,6 +49,7 @@ THIRD_APPS = [
 ]
 
 INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

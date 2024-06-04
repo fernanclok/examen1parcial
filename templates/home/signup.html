@@ -7,6 +7,6 @@
         {% csrf_token %}
             {{ form }}
             <button type="submit" class="btn btn-success form-control">SignUp</button>
-            <a href="{% url 'home:index' %}" class="btn btn-warning">Cancel</a>
+            <a href="{% url 'core:index' %}" class="btn btn-warning">Cancel</a>
     </form>
 {% endblock content %}

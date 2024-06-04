@@ -1,10 +1,10 @@
 {% extends "base/base.html" %}
 
-{% block title %}LISTA TAREAS{% endblock title %}
+{% block title %}LISTA SERVICIO{% endblock title %}
 
 {% block content %}
-    <a href="{% url 'core:create_task' %}" class="btn btn-outline-success form-control">Nueva Tarea</a>
-    <table class="table table-striped">
+    <a href="{% url 'core:create_service' %}" class="btn btn-outline-success form-control">Nueva Servicio</a>
+    <table class="table table-success table-striped">
         <thead>
             <th>Nombre Usuario </th>
             <th>Descripcion</th>
@@ -14,16 +14,16 @@
             <th></th>
         </thead>
         <tbody>
-            {% comment %} {% for service in services %}
+            {% for service in services %}
                 <tr>
                     <td>{{ service.title }}</td>
                     <td>{{ service.description }}</td>
                     <td>{{ service.timestamp }}</td>
-                    <td><a href="{% url 'core:detail_service' task.pk %}" class="btn btn-outline-info">Detalles</a></td>
-                    <td><a href="{% url 'core:update_service' task.pk %}" class="btn btn-outline-warning">Actualizar</a></td>
-                    <td><a href="{% url 'core:delete_service' task.pk %}" class="btn btn-outline-danger">Eliminar</a></td>
+                    {% comment %} <td><a href="{% url 'core:detail_service' service.pk %}" class="btn btn-outline-info">Detalles</a></td> {% endcomment %}
+                    <td><a href="{% url 'core:update_service' service.pk %}" class="btn btn-outline-warning">Actualizar</a></td>
+                    <td><a href="{% url 'core:delete_service' service.pk %}" class="btn btn-outline-danger">Eliminar</a></td>
                 </tr>
-            {% endfor %} {% endcomment %}
+            {% endfor %}
         </tbody>
     </table>
 {% endblock content %}

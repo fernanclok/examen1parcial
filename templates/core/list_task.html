@@ -1,11 +1,12 @@
 {% extends "base/base.html" %}
 
-{% block title %}LISTA TAREAS{% endblock title %}
+{% block title %}LISTA DE TAREAS{% endblock title %}
 
 {% block content %}
-    <a href="{% url 'core:create_task' %}" class="btn btn-outline-success form-control">Nueva Tarea</a>
-    <table class="table table-striped">
+    <a href="{% url 'core:new_task' %}" class="btn btn-outline-success form-control">Nueva Tarea</a>
+    <table class="table table-success table-striped">
         <thead>
+            
             <th>Titulo</th>
             <th>Description</th>
             <th>Usuario</th>
@@ -15,17 +16,17 @@
             <th></th>
         </thead>
         <tbody>
-            {% comment %} {% for task in tasks %}
+            {% for task in tasks %}
                 <tr>
                     <td>{{ task.title }}</td>
                     <td>{{ task.description }}</td>
                     <td>{{ task.user }}</td>
-                    <td>{{ task.due_date }}</td>
-                    <td><a href="{% url 'core:detail_task' task.pk %}" class="btn btn-outline-info">Detalles</a></td>
+                    <td>{{ task.timestamp }}</td>
+                    <!-- <td><a href="{% url 'core:detail_task' task.pk %}" class="btn btn-outline-info">Detalles</a></td> -->
                     <td><a href="{% url 'core:update_task' task.pk %}" class="btn btn-outline-warning">Actualizar</a></td>
                     <td><a href="{% url 'core:delete_task' task.pk %}" class="btn btn-outline-danger">Eliminar</a></td>
                 </tr>
-            {% endfor %} {% endcomment %}
+            {% endfor %}
         </tbody>
     </table>
 {% endblock content %}

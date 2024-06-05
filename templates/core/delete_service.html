@@ -1,0 +1,16 @@
+{% extends "base/base.html" %}
+
+
+{% block title%} DELETE service{% endblock title %}
+
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+            <h3>¿Deceas eliminar el service  seleccionada?: "{{ object }}"?</h3>
+            
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a href="{% url 'core:list_service' %}" class="btn btn-warning">Cancel</a>
+    </form>
+
+{% endblock content %}
+

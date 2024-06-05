@@ -1,0 +1,13 @@
+{% extends "base/base.html" %}
+
+{% block title %}CREATE SERVICE{% endblock title %}
+
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+            {{ form }}
+            <button style="margin: 2%;" type="submit" class="btn btn-success form-control">Crear Servicio</button>
+            <br>
+            <a href="{% url 'core:list_service' %}" class="btn btn-danger form-control">Cancelar</a>
+    </form>
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends "base/base.html" %}
+
+{% block title %}LISTA SERVICIO{% endblock title %}
+
+{% block content %}
+    <a href="{% url 'core:create_service' %}" class="btn btn-outline-success form-control">Nueva Servicio</a>
+    <table class="table">
+        <thead class="table-light">
+            <th>Nombre Usuario </th>
+            <th>Descripcion</th>
+            <th>Tipo</th>
+            <th>Tiempo</th>
+            {% comment %} <th></th> {% endcomment %}
+            <th>ACTIONS</th>
+            <th></th>
+        </thead>
+        <tbody>
+            {% for service in services %}
+                <tr>
+                    <td>{{ service.serv_name }}</td>
+                    <td>{{ service.description }}</td>
+                    <td>{{ service.type }}</td>
+                    <td>{{ service.timestamp }}</td>
+                    {% comment %} <td><a href="{% url 'core:detail_service' service.pk %}" class="btn btn-outline-info">Detalles</a></td> {% endcomment %}
+                    <td><a href="{% url 'core:update_service' service.pk %}" class="btn btn-warning">Actualizar</a></td>
+                    <td><a href="{% url 'core:delete_service' service.pk %}" class="btn btn-danger">Eliminar</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}

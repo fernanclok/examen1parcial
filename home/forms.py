@@ -10,7 +10,7 @@ class LoginForm(forms.Form):
 
 
 
-class NewUserForm(UserCreationForm):
+class SignupForm(UserCreationForm):
     username = forms.CharField(max_length=16, widget=forms.TextInput(attrs={"type":"text", "class":"form-control", "placeholder":"Username"})) 
     password1 = forms.CharField(max_length=32, widget=forms.PasswordInput(attrs={"type":"password", "class":"form-control", "placeholder":"Password"}))
     password2 = forms.CharField(max_length=32, widget=forms.PasswordInput(attrs={"type":"password", "class":"form-control", "placeholder":"Password"}))  

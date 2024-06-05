@@ -11,7 +11,7 @@ from django.dispatch import receiver
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.CharField(max_length=128, default="I Love Plesem System")
+    bio = models.CharField(max_length=128, default="Bio")
     avatar = models.ImageField(blank=True, null=True)
     timestamp = models.DateField(auto_now_add=True, auto_now=False)
     updated = models.DateField(auto_now_add=False, auto_now=True)

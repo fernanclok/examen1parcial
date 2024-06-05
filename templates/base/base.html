@@ -19,7 +19,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'home:index' %}">Home</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'home:homer' %}">Home</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'core:list_task' %}">Tasks</a>
@@ -28,12 +28,10 @@
                     <a class="nav-link" href="{% url 'core:list_service' %}">Services</a>
                   </li>
                 </ul>
-                {% comment %} <li class="nav-item">
-                  <a class="nav-link" aria-disabled="false" href="{% url 'core:signup' %}">Login</a> 
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" aria-disabled="false" href="{% url 'core:logout' %}">Logout</a> 
-                </li> {% endcomment %}
+                <ul class="navbar-nav me-right mb-2 mb-lg-0" style="padding-right: 2%;">
+                  <li><a  href="{% url 'home:logout' %}" class="btn btn-outline-dark border-0"> Logout </a></li>
+                  <li><a class="nav-link active" aria-current="page">{{ request.user }}</a> </li>          
+                </ul>
               </div>
             </div>
           </nav>

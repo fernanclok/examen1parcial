@@ -4,14 +4,15 @@
 
 {% block content %}
     <a href="{% url 'core:new_task' %}" class="btn btn-outline-success form-control">Nueva Tarea</a>
-    <table class="table table-success table-striped">
-        <thead>
+    <table class="table">
+        <thead class="table-light">
             
             <th>Titulo</th>
             <th>Description</th>
             <th>Usuario</th>
-            <th>Fecha</th>
-            <th></th>
+            <th>Fecha Inicio</th>
+            <th>Fecha Final</th>
+            {% comment %} <th></th> {% endcomment %}
             <th>ACTIONS</th>
             <th></th>
         </thead>
@@ -22,11 +23,15 @@
                     <td>{{ task.description }}</td>
                     <td>{{ task.user }}</td>
                     <td>{{ task.timestamp }}</td>
+                    <td>{{ task.due_date }}</td>
                     <!-- <td><a href="{% url 'core:detail_task' task.pk %}" class="btn btn-outline-info">Detalles</a></td> -->
-                    <td><a href="{% url 'core:update_task' task.pk %}" class="btn btn-outline-warning">Actualizar</a></td>
-                    <td><a href="{% url 'core:delete_task' task.pk %}" class="btn btn-outline-danger">Eliminar</a></td>
+                    {% comment %} <td></td> {% endcomment %}
+                    <td><a href="{% url 'core:update_task' task.pk %}" class="btn btn-warning">Actualizar</a></td>
+                    <td><a href="{% url 'core:delete_task' task.pk %}" class="btn btn-danger">Eliminar</a></td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
+
+    
 {% endblock content %}
